@@ -32,9 +32,6 @@ def go(args):
     # Price range
     idx = df['price'].between(args.min_price, args.max_price)
     df = df[idx].copy()
-    # Location
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
-    df = df[idx].copy()
     # Duplicates
     df = df.drop_duplicates().reset_index(drop=True)
 
